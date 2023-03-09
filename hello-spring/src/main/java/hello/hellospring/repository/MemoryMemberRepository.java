@@ -30,7 +30,7 @@ public class MemoryMemberRepository implements MemberRepository {
 	@Override
 	public Optional<Member> findByName(String Name) {
 		// TODO Auto-generated method stub 
-		return store.values().stream().filter(member -> member.getName().equals(neme))
+		return store.values().stream().filter(member -> member.getName().equals(Name))
 				.findAny();
 	}
 
