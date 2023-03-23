@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 
 @SpringBootTest
@@ -19,13 +20,8 @@ import hello.hellospring.repository.MemoryMemberRepository;
 class MemberServiceIntegrationTest {
 	
 	@Autowired MemberService memberService;
-	@Autowired MemoryMemberRepository memberRepository;
+	@Autowired MemberRepository memberRepository;
 	
-	@AfterEach
-	public void afterEach() {
-		memberRepository.clearStore();
-	}
-
 	@Test
 	void join() {
 		//given
